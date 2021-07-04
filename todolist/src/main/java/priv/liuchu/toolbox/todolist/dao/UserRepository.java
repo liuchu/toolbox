@@ -1,0 +1,9 @@
+package priv.liuchu.toolbox.todolist.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import priv.liuchu.toolbox.todolist.entity.UserEntity;
+
+public interface UserRepository extends JpaRepository<UserEntity, Integer>, JpaSpecificationExecutor<UserEntity> {
+
+}
