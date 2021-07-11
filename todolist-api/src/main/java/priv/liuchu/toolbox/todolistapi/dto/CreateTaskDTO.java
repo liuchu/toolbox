@@ -1,4 +1,4 @@
-package priv.liuchu.toolbox.todolist.service.dto;
+package priv.liuchu.toolbox.todolistapi.dto;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

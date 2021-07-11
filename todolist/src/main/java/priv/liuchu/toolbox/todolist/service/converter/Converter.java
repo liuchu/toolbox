@@ -4,9 +4,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import priv.liuchu.toolbox.todolist.entity.TodoTaskEntity;
 import priv.liuchu.toolbox.todolist.entity.UserEntity;
-import priv.liuchu.toolbox.todolist.service.dto.CreateTaskDTO;
-import priv.liuchu.toolbox.todolist.service.dto.CreateUserDTO;
-import priv.liuchu.toolbox.todolist.service.dto.TodoTaskDTO;
+import priv.liuchu.toolbox.todolistapi.dto.CreateTaskDTO;
+import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
+import priv.liuchu.toolbox.todolistapi.dto.TodoTaskDTO;
 
 import java.util.List;
 

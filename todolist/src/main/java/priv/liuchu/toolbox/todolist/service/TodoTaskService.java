@@ -1,9 +1,8 @@
 package priv.liuchu.toolbox.todolist.service;
 
-import priv.liuchu.toolbox.todolist.service.dto.CompleteTaskDTO;
-import priv.liuchu.toolbox.todolist.service.dto.CreateTaskDTO;
-import priv.liuchu.toolbox.todolist.service.dto.QueryTasksDTO;
-import priv.liuchu.toolbox.todolist.service.dto.TodoTaskDTO;
+import priv.liuchu.toolbox.todolistapi.dto.CreateTaskDTO;
+import priv.liuchu.toolbox.todolistapi.dto.QueryTasksDTO;
+import priv.liuchu.toolbox.todolistapi.dto.TodoTaskDTO;
 
 import java.util.List;
 

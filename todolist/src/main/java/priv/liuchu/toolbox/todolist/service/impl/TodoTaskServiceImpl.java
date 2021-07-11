@@ -3,19 +3,15 @@ package priv.liuchu.toolbox.todolist.service.impl;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import priv.liuchu.toolbox.todolist.dao.TodoTaskRepository;
-import priv.liuchu.toolbox.todolist.dao.UserRepository;
 import priv.liuchu.toolbox.todolist.entity.TodoTaskEntity;
-import priv.liuchu.toolbox.todolist.entity.UserEntity;
 import priv.liuchu.toolbox.todolist.service.TodoTaskService;
 import priv.liuchu.toolbox.todolist.service.converter.Converter;
-import priv.liuchu.toolbox.todolist.service.dto.CompleteTaskDTO;
-import priv.liuchu.toolbox.todolist.service.dto.CreateTaskDTO;
-import priv.liuchu.toolbox.todolist.service.dto.QueryTasksDTO;
-import priv.liuchu.toolbox.todolist.service.dto.TodoTaskDTO;
+import priv.liuchu.toolbox.todolistapi.dto.CreateTaskDTO;
+import priv.liuchu.toolbox.todolistapi.dto.QueryTasksDTO;
+import priv.liuchu.toolbox.todolistapi.dto.TodoTaskDTO;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TodoTaskServiceImpl implements TodoTaskService {

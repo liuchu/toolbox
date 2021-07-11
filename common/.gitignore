@@ -31,9 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Non-project files ###
-*.log
-.mvn
-**/mvnw
-**/mvnw.cmd

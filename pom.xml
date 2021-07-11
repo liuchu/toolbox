@@ -11,8 +11,16 @@
 	<groupId>priv.liuchu</groupId>
 	<artifactId>toolbox</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>toolbox</name>
 	<description>A tool collection personally</description>
+
+	<modules>
+		<module>todolist</module>
+		<module>todolist-api</module>
+		<module>toolbox-gw</module>
+	</modules>
+
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2020.0.3</spring-cloud.version>

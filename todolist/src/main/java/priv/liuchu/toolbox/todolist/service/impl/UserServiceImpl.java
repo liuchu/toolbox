@@ -8,7 +8,7 @@ import priv.liuchu.toolbox.todolist.entity.UserEntity;
 import priv.liuchu.toolbox.todolist.service.UserService;
 import priv.liuchu.toolbox.todolist.service.consts.AppConst;
 import priv.liuchu.toolbox.todolist.service.converter.Converter;
-import priv.liuchu.toolbox.todolist.service.dto.CreateUserDTO;
+import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
 
 import javax.annotation.Resource;
 

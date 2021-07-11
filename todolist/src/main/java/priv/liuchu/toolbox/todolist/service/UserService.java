@@ -1,6 +1,6 @@
 package priv.liuchu.toolbox.todolist.service;
 
-import priv.liuchu.toolbox.todolist.service.dto.CreateUserDTO;
+import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
 
 public interface UserService {
 
