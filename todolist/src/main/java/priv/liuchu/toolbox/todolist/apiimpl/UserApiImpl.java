@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import priv.liuchu.toolbox.todolist.service.UserService;
 import priv.liuchu.toolbox.todolistapi.UserApi;
 import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
+import priv.liuchu.toolbox.todolistapi.dto.UserDTO;
 
 @RestController
 @RequestMapping("/api/user")
@@ -17,5 +18,10 @@ public class UserApiImpl implements UserApi {
     @Override
     public void createUser(CreateUserDTO dto) {
         userService.createUser(dto);
+    }
+
+    @Override
+    public UserDTO queryUserById(int userId) {
+        return userService.queryById(userId);
     }
 }

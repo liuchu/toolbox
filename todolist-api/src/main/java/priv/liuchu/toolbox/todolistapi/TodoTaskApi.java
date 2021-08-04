@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import priv.liuchu.toolbox.todolistapi.dto.CreateTaskDTO;
 
-@FeignClient(value = "todolist-service", path = "/api/task")
+@FeignClient(value = "todolist-task-service")
 public interface TodoTaskApi {
 
     @PostMapping("/create")

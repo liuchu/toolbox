@@ -1,12 +1,14 @@
-
-
 spring:
   datasource:
+    url: jdbc:mysql://rm-uf6tpisqevjobg5o43o.mysql.rds.aliyuncs.com:3306/todolist?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://rm-uf6tpisqevjobg5o43o.mysql.rds.aliyuncs.com:3306/todolist
     username: todolist
     password: Aliyun@liu5689
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       minimum-idle: 2
       maximum-pool-size: 5
+  application:
+    name: demo # 应用名称
+  profiles:
+    active: dev # 指定环境，默认加载 default 环境

@@ -9,4 +9,6 @@ import java.io.Serializable;
 @Accessors(chain = true)
 public class UserDTO implements Serializable {
     private static final long serialVersionUID = -3365157397105184558L;
+
+    private String nickName;
 }

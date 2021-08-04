@@ -9,6 +9,7 @@ import priv.liuchu.toolbox.todolist.service.UserService;
 import priv.liuchu.toolbox.todolist.service.consts.AppConst;
 import priv.liuchu.toolbox.todolist.service.converter.Converter;
 import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
+import priv.liuchu.toolbox.todolistapi.dto.UserDTO;
 
 import javax.annotation.Resource;
 
@@ -20,15 +21,26 @@ public class UserServiceImpl implements UserService {
     @Resource
     private TodoTaskCategoryRepository categoryRepo;
 
+    public static final Converter CONVERTER = Converter.INSTANCE;
+
     @Override
     public void createUser(CreateUserDTO dto) {
 
         UserEntity user = userRepo.saveAndFlush(
-                Converter.INSTANCE.dtoToEntity(dto));
+                CONVERTER.dtoToEntity(dto));
 
         categoryRepo.save(
                 new TodoTaskCategoryEntity()
                         .setUserId(user.getId())
                         .setCategoryName(AppConst.DEFAULT_CATEGORY));
+    }
+
+    @Override
+    public UserDTO queryById(int id) {
+
+        UserEntity entity =
+                userRepo.findById(id).orElseThrow(IllegalStateException::new);
+
+        return CONVERTER.entityToDto(entity);
     }
 }

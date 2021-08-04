@@ -1,30 +1,37 @@
 package priv.liuchu.toolbox.gw.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import priv.liuchu.toolbox.common.Result;
 import priv.liuchu.toolbox.todolistapi.UserApi;
 import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
+import priv.liuchu.toolbox.todolistapi.dto.UserDTO;
 
 @RestController
-@RequestMapping("/dodolist")
+@RequestMapping("/todolist")
 public class TodoListController {
 
-    private final UserApi userApi;
+    @Autowired
+    private UserApi userApi;
 
-    public TodoListController(UserApi userApi) {
-        this.userApi = userApi;
-    }
-
-    @RequestMapping
+    @PostMapping("/user/create")
     public Result createUser(@RequestBody CreateUserDTO dto) {
         userApi.createUser(dto);
 
         return Result.builder()
                 .code("1000")
                 .msg("ok")
+                .build();
+    }
+
+    @RequestMapping("/user/{userId}")
+    public Result queryUser(@PathVariable int userId){
+        UserDTO userDTO = userApi.queryUserById(userId);
+
+        return Result.builder()
+                .code("1000")
+                .msg("ok")
+                .result(userDTO)
                 .build();
     }
 }

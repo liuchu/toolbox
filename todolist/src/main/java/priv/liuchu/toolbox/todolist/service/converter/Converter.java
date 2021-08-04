@@ -7,6 +7,7 @@ import priv.liuchu.toolbox.todolist.entity.UserEntity;
 import priv.liuchu.toolbox.todolistapi.dto.CreateTaskDTO;
 import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
 import priv.liuchu.toolbox.todolistapi.dto.TodoTaskDTO;
+import priv.liuchu.toolbox.todolistapi.dto.UserDTO;
 
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface Converter {
 
     List<TodoTaskDTO> entityToDtoList(List<TodoTaskEntity> list);
     TodoTaskDTO entityToDto(TodoTaskEntity dto);
+
+    UserDTO entityToDto(UserEntity dto);
 }
