@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration xmlns="http://ch.qos.logback/xml/ns/logback" scan="true" debug="true">
-    <springProperty scope="context" name="logging.path" source="logging.path"/>
+    <springProperty scope="context" name="logging.path" source="logging.file.path"/>
     <springProperty scope="context" name="logging.level" source="logging.level"/>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
@@ -13,12 +13,12 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${logging.path}/toolbox-gw.%d{yyyy-MM-dd-HH}.%i.log.gz</fileNamePattern>
-            <maxFileSize>100MB</maxFileSize>
-            <maxHistory>90</maxHistory>
+        <file>${logging.path}/toolbox-gw.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${logging.path}/toolbox-gw.%d{yyyy-MM-dd}.log</FileNamePattern>
         </rollingPolicy>
-        <encoder>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <charset>utf8</charset>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%15.15thread|%40.40logger{39}|%5L] : %m%n%wEx</pattern>
         </encoder>

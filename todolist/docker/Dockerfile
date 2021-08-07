@@ -1,10 +1,20 @@
 FROM openjdk:8-jdk-alpine
 
+ENV TZ Asia/Shanghai
+
+RUN mkdir /app
+
 #创建spring组/用户
 RUN addgroup -S spring && adduser -S spring -G spring
 
+RUN chown spring:spring /app
+
 #以spring用户进行操作
 USER spring:spring
+
+WORKDIR /app
+
+RUN mkdir /app/log
 
 #定义参数
 ARG SOURCE_JAR_FILE=target/todolist.jar

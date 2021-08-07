@@ -1,10 +1,15 @@
 server:
   port: 9999 # 端口
+logging:
+  file:
+    path: /app/log
+  level:
+    root: DEBUG
 spring:
   application:
     name: toolbox-gw # 应用名称
   profiles:
-    active: dev # 指定环境，默认加载 default 环境
+    active: '@spring.profile@' # 指定环境，默认加载 default 环境
   cloud:
     consul:
       # Consul 服务器地址

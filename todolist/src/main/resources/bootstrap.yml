@@ -1,10 +1,8 @@
-server:
-  port: 9090 # 端口
 spring:
   application:
     name: todolist # 应用名称
   profiles:
-    active: dev # 指定环境，默认加载 default 环境
+    active: '@spring.profile@' # 指定环境，默认加载 default 环境
   cloud:
     consul:
       # Consul 服务器地址

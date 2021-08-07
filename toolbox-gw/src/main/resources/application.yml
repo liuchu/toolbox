@@ -1,4 +1,0 @@
-logging:
-  file:
-    path: /app/log
-  level: info
