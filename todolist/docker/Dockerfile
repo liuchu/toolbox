@@ -14,4 +14,4 @@ ARG TARGET_JAR_FILE=/todolist.jar
 COPY ${SOURCE_JAR_FILE} ${TARGET_JAR_FILE}
 
 #执行
-ENTRYPOINT ["java","-Xmx1024m","-jar","${TARGET_JAR_FILE}"]
+ENTRYPOINT ["java","-Xmx1024m","-jar","/todolist.jar"]
