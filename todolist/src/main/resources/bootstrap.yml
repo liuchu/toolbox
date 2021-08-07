@@ -8,7 +8,7 @@ spring:
   cloud:
     consul:
       # Consul 服务器地址
-      host: localhost
+      host: host.docker.internal
       port: 8500
       # 配置中心相关配置
       config:

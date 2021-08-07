@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
 import priv.liuchu.toolbox.todolistapi.dto.UserDTO;
 
-@FeignClient(value = "todolist-user-service")
+@FeignClient(value = "todolist", path = "/user")
 public interface UserApi {
 
     @PostMapping("/create")

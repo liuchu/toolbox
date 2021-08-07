@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://ch.qos.logback/xml/ns/logback" scan="true" debug="true">
+    <springProperty scope="context" name="logging.path" source="logging.path"/>
+    <springProperty scope="context" name="logging.level" source="logging.level"/>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf8</charset>
+            <pattern>%yellow(%d{yyyy-MM-dd HH:mm:ss.SSS}) %highlight(%5p) --- [%15.15thread|%40.40logger{39}|%5L] : %m%n%wEx</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logging.path}/toolbox-gw.%d{yyyy-MM-dd-HH}.%i.log.gz</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>utf8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%15.15thread|%40.40logger{39}|%5L] : %m%n%wEx</pattern>
+        </encoder>
+    </appender>
+
+    <!--<appender name="API" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logging.path}/api/%d{yyyy-MM-dd-HH}.%i.log.gz</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%msg</pattern>
+        </encoder>
+    </appender>-->
+
+    <!--<logger level="INFO" name="api" additivity="false">
+        <appender-ref ref="API"/>
+    </logger>
+    <logger level="INFO" name="param" additivity="false">
+        <appender-ref ref="PARAM"/>
+    </logger>
+    <logger level="INFO" name="task" additivity="false">
+        <appender-ref ref="TASK"/>
+    </logger>-->
+
+    <root level="${logging.level}">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

@@ -9,7 +9,7 @@ import priv.liuchu.toolbox.todolistapi.dto.CreateUserDTO;
 import priv.liuchu.toolbox.todolistapi.dto.UserDTO;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserApiImpl implements UserApi {
 
     @Autowired

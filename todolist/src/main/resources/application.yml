@@ -10,3 +10,7 @@ spring:
       maximum-pool-size: 5
   jpa:
     open-in-view: false
+logging:
+  file:
+    path: /app/log
+  level: info
