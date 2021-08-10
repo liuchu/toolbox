@@ -3,11 +3,10 @@ spring:
     name: todolist # 应用名称
   profiles:
     active: '@spring.profile@' # 指定环境，默认加载 default 环境
+  jpa:
+    open-in-view: false
   cloud:
     consul:
-      # Consul 服务器地址
-      host: host.docker.internal
-      port: 8500
       # 配置中心相关配置
       config:
         # 是否启用配置中心，默认值 true 开启

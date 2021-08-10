@@ -4,10 +4,15 @@ logging:
   file:
     path: /app/log
   level:
-    root: DEBUG
+    root: INFO
 spring:
+  cloud:
+    consul:
+      # Consul 服务器地址
+      host: 172.26.0.2
+      port: 8500
   datasource:
-    url: jdbc:mysql://rm-uf6tpisqevjobg5o43o.mysql.rds.aliyuncs.com:3306/todolist?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://rm-uf6tpisqevjobg5o4.mysql.rds.aliyuncs.com:3306/todolist?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: todolist
     password: Aliyun@liu5689
     type: com.zaxxer.hikari.HikariDataSource
