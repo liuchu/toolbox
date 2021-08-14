@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "toolbox.web.url",
+      "type": "java.lang.String",
+      "description": "Description for toolbox.web.url."
+  }
+] }

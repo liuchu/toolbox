@@ -1,0 +1,23 @@
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway
+spring:
+  application:
+    name: toolbox-gw
+  cloud:
+    gateway:
+      routes:
+        - id: get-todolist-user
+          uri: ${toolbox.web.url}/todolist/user
+          predicates:
+            - Path=/todolist/user
+            - Method=GET
+        - id: post-todolist-user-create
+          uri: ${toolbox.web.url}/todolist/user/create
+            predicates:
+              - Path=/todolist/user/create
+              - Method=POST

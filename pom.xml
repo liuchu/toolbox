@@ -19,6 +19,7 @@
 		<module>todolist</module>
 		<module>todolist-api</module>
 		<module>toolbox-gw</module>
+		<module>toolbox-web</module>
         <module>demo</module>
 	</modules>
 

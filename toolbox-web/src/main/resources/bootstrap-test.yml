@@ -1,0 +1,13 @@
+server:
+  port: 9999 # 端口
+logging:
+  file:
+    path: /app/log
+  level:
+    root: INFO
+spring:
+  cloud:
+    consul:
+      # Consul 服务器地址
+      host: 172.26.0.2
+      port: 8500
