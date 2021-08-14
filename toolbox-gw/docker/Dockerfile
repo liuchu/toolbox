@@ -24,4 +24,4 @@ ARG TARGET_JAR_FILE=/toolbox-gw.jar
 COPY ${SOURCE_JAR_FILE} ${TARGET_JAR_FILE}
 
 #执行
-ENTRYPOINT ["java","-Xmx1024m","-jar","toolbox-gw.jar"]
+ENTRYPOINT ["java","-Xmx1024m","-jar","/toolbox-gw.jar"]

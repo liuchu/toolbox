@@ -1,3 +1,15 @@
-toolbox:
-  web:
-    url: https://172.26.0.2:8081
+server:
+  port: 8080
+logging:
+  level:
+    root: INFO
+spring:
+  application:
+    name: toolbox-gw
+  cloud:
+    gateway:
+      routes:
+        - id: todolist-web
+          uri: http://172.26.0.2:9999
+          predicates:
+            - Path=/todolist/**

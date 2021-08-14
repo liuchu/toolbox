@@ -1,3 +1,15 @@
-toolbox:
-  web:
-    url: https://localhost:8081
+server:
+  port: 8080
+logging:
+  level:
+    root: DEBUG
+spring:
+  application:
+    name: toolbox-gw
+  cloud:
+    gateway:
+      routes:
+        - id: todolist-web
+          uri: http://localhost:9999
+          predicates:
+            - Path=/todolist/**

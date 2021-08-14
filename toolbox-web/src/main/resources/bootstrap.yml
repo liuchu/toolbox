@@ -3,8 +3,5 @@ spring:
     name: toolbox-web # 应用名称
   profiles:
     active: '@spring.profile@' # 指定环境，默认加载 default 环境
-  cloud:
-    consul:
-## 服务发现相关配置
-      discovery:
-        register: false                                # 是否需要注册
+  main:
+    allow-bean-definition-overriding: true
