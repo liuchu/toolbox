@@ -71,6 +71,7 @@
     </dependencies>
 
     <build>
+        <finalName>toolbox-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

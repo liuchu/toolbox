@@ -8,6 +8,9 @@ logging:
 spring:
   cloud:
     consul:
+      ## 服务发现相关配置
+      discovery:
+        register: false # 是否需要注册
       # Consul 服务器地址
       host: 172.26.0.2
       port: 8500
