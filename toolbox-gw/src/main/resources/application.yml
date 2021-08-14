@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: toolbox-gw
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: todolist-web
+          uri: lb://toolbox-web
+          predicates:
+            - Path=/todolist/**
+    consul:
+      ## 服务发现相关配置
+      discovery:
+        register: false # 是否需要注册
+      # Consul 服务器地址
+      host: localhost
+      port: 8500
