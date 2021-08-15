@@ -28,8 +28,7 @@ public class TodoTaskServiceImpl implements TodoTaskService {
     public void completeTask(Integer taskId) {
 
         taskRepository.save(
-                new TodoTaskEntity()
-                        .setCategoryId(taskId)
+                taskRepository.findById(taskId).orElseThrow(IllegalStateException::new)
                         .setCompleted(true));
     }
 
@@ -39,17 +38,16 @@ public class TodoTaskServiceImpl implements TodoTaskService {
         List<TodoTaskEntity> entityList = taskRepository.findAll(
                 Example.of(
                         new TodoTaskEntity()
-                                .setUserId(dto.getUserId())
-                                .setCategoryId(dto.getCategoryId())));
+                                .setCategoryId(dto.getCategoryId())
+                                .setCompleted(false)));
 
         return Converter.INSTANCE.entityToDtoList(entityList);
     }
 
     @Override
     public TodoTaskDTO queryTask(Integer taskId) {
-        TodoTaskEntity byId = taskRepository.getById(taskId);
+        TodoTaskEntity byId = taskRepository.findById(taskId).orElseThrow(IllegalStateException::new);
 
-
-        return  Converter.INSTANCE.entityToDto(byId);
+        return Converter.INSTANCE.entityToDto(byId);
     }
 }

@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 import priv.liuchu.toolbox.todolist.service.TodoTaskService;
 import priv.liuchu.toolbox.todolistapi.TodoTaskApi;
 import priv.liuchu.toolbox.todolistapi.dto.CreateTaskDTO;
+import priv.liuchu.toolbox.todolistapi.dto.QueryTasksDTO;
+import priv.liuchu.toolbox.todolistapi.dto.TodoTaskDTO;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/task")
+@RequestMapping("/task")
 public class TodoTaskApiImpl implements TodoTaskApi {
 
     @Autowired
@@ -18,5 +22,20 @@ public class TodoTaskApiImpl implements TodoTaskApi {
     @Override
     public void createTask(@RequestBody CreateTaskDTO dto) {
         todoTaskService.createTask(dto);
+    }
+
+    @Override
+    public void completeTask(int taskId) {
+        todoTaskService.completeTask(taskId);
+    }
+
+    @Override
+    public List<TodoTaskDTO> queryTasks(QueryTasksDTO dto) {
+        return todoTaskService.queryTasks(dto);
+    }
+
+    @Override
+    public TodoTaskDTO queryTask(int taskId) {
+        return todoTaskService.queryTask(taskId);
     }
 }

@@ -19,6 +19,7 @@ public interface Converter {
     TodoTaskEntity dtoToEntity(CreateTaskDTO dto);
 
     List<TodoTaskDTO> entityToDtoList(List<TodoTaskEntity> list);
+
     TodoTaskDTO entityToDto(TodoTaskEntity dto);
 
     UserDTO entityToDto(UserEntity dto);
