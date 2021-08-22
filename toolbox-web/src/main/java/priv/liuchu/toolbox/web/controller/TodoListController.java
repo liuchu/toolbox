@@ -10,7 +10,7 @@ import priv.liuchu.toolbox.todolistapi.dto.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/todolist")
+@RequestMapping("/api/todolist")
 public class TodoListController {
 
     @Autowired
@@ -53,8 +53,8 @@ public class TodoListController {
     }
 
     @GetMapping("/task/list")
-    public Result queryTasks(QueryTasksDTO dto){
-        List<TodoTaskDTO> dtos = taskApi.queryTasks(dto);
+    public Result queryTasks(@RequestParam("userId")int userId, @RequestParam("categoryId")int categoryId){
+        List<TodoTaskDTO> dtos = taskApi.queryTasks(userId, categoryId);
 
         return Result.builder()
                 .code("1000")

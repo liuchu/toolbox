@@ -30,8 +30,9 @@ public class TodoTaskApiImpl implements TodoTaskApi {
     }
 
     @Override
-    public List<TodoTaskDTO> queryTasks(QueryTasksDTO dto) {
-        return todoTaskService.queryTasks(dto);
+    public List<TodoTaskDTO> queryTasks(int userId, int categoryId) {
+        return todoTaskService.queryTasks(
+                new QueryTasksDTO().setUserId(userId).setCategoryId(categoryId));
     }
 
     @Override

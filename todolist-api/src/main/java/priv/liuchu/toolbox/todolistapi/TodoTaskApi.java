@@ -15,7 +15,7 @@ public interface TodoTaskApi {
     void createTask(@RequestBody CreateTaskDTO dto);
 
     @GetMapping("/list")
-    List<TodoTaskDTO> queryTasks(QueryTasksDTO dto);
+    List<TodoTaskDTO> queryTasks(@RequestParam("userId")int userId, @RequestParam("categoryId")int categoryId);
 
     @PostMapping("/done")
     void completeTask(@RequestParam("taskId") int taskId);
