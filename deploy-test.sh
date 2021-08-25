@@ -51,9 +51,10 @@ if sudo docker stop ${app_todolist}; then
 fi
 
 #拉取最新代码
-/usr/bin/git fetch
-/usr/bin/git checkout "$1"
-/usr/bin/git pull
+git reset --hard HEAD
+git fetch
+git checkout "$1"
+git pull
 echo "commit message : $(/usr/bin/git log --oneline -1 --pretty=%B)"
 
 #重新打包
