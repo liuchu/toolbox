@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 deploySubApp(){
   if sudo docker rm -f $1; then
     echo "remove old container : $1"
