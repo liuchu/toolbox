@@ -30,9 +30,9 @@ check "$@"
 
 active="test"
 project_name="toolbox"
-app_gw='chuliu/toolbox-gw'
-app_web='chuliu/toolbox-web'
-app_todolist='chuliu/todolist'
+app_gw='toolbox-gw'
+app_web='toolbox-web'
+app_todolist='todolist'
 gw_port=8080
 web_port=9999
 todolist_port=9090
