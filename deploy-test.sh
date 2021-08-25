@@ -10,11 +10,11 @@ deploySubApp(){
     echo "remove old image : $1"
   fi
 
-  if sudo docker build -f ./docker/Dockerfile -t $1 .; then
+  if sudo docker build -f $3/docker/Dockerfile -t $1 .; then
     echo "docker build : $1 successful"
   fi
 
-  if sudo docker run -e --init -m 256M -p $2:$2 -t $1 --name $1; then
+  if sudo docker run -e --init -m 256M -p $2:$2 -t --name "$1" $1; then
     echo "docker run : $1 successful"
   fi
 }
@@ -59,10 +59,10 @@ git pull
 echo "commit message : $(/usr/bin/git log --oneline -1 --pretty=%B)"
 
 #重新打包
-/usr/bin/mvn -B -f pom.xml clean install -Dmaven.test.skip=true -P ${active}
+mvn clean install -Dmaven.test.skip=true -P ${active}
 
-deploySubApp ${app_todolist} ${todolist_port}
-deploySubApp ${app_web} ${web_port};
-deploySubApp ${app_gw} ${gw_port};
+deploySubApp ${app_todolist} ${todolist_port} ./todolist
+deploySubApp ${app_web} ${web_port} ./toolbox-web
+deploySubApp ${app_gw} ${gw_port} ./toolbox-gw
 
 echo "$(whoami) : $(date +'%Y-%m-%d %H:%M:%S') completed: ${project_name}"
