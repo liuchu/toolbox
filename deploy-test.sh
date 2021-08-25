@@ -13,7 +13,7 @@ deploySubApp(){
     echo "docker build : $1 successful"
   fi
 
-  if sudo docker run -e --init -m 256M -p $2:$2 -t $1; then
+  if sudo docker run -e --init -m 256M -p $2:$2 -t $1 --name $1; then
     echo "docker run : $1 successful"
   fi
 }
@@ -30,7 +30,7 @@ check "$@"
 active="test"
 project_name="toolbox"
 app_gw='chuliu/toolbox-gw'
-app_web='chuliu/chuliu/toolbox-web'
+app_web='chuliu/toolbox-web'
 app_todolist='chuliu/todolist'
 gw_port=8080
 web_port=9999
