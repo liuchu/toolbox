@@ -10,7 +10,7 @@ spring:
         - id: todolist-web
           uri: lb://toolbox-web
           predicates:
-            - Path=/todolist/**
+            - Path=/api/**
     consul:
       ## 服务发现相关配置
       discovery:
