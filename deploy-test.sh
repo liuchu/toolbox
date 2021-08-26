@@ -14,7 +14,7 @@ deploySubApp(){
     echo "docker build : $1 successful"
   fi
 
-  if sudo docker run -e --init -m 256M -p $2:$2 -t --name "$1" $1; then
+  if sudo docker run -e "SPRING_PROFILES_ACTIVE=test" --init -m 256M -p $2:$2 -t --name "$1" $1; then
     echo "docker run : $1 successful"
   fi
 }
