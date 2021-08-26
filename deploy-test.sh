@@ -10,7 +10,7 @@ deploySubApp(){
     echo "remove old image : $1"
   fi
 
-  if sudo docker build -f $3/docker/Dockerfile -t $1 .; then
+  if sudo docker build --build-arg SOURCE_JAR_FILE=$3/target/$1.jar --build-arg TARGET_JAR_FILE=/$1.jar -f $3/docker/Dockerfile -t $1 .; then
     echo "docker build : $1 successful"
   fi
 
